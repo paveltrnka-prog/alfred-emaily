@@ -4,9 +4,7 @@ Redesign transakčních e-mailů aplikace [Alfred](https://myalfred.app) pro hot
 
 ## Přehled emailů
 
-Prohlídka všech emailů: **[preview/index.html](preview/index.html)**
-
-Po aktivaci GitHub Pages: `https://trnkapavel.github.io/alfred-e-maily/preview/`
+Prohlídka všech emailů: **[paveltrnka-prog.github.io/alfred-emaily/preview/](https://paveltrnka-prog.github.io/alfred-emaily/preview/)**
 
 ### Hosté (18 emailů)
 | # | Název | Stav |
