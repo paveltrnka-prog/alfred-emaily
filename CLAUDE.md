@@ -122,6 +122,13 @@ Redesign všech transakčních e-mailů aplikace Alfred (myalfred.app) pro hotel
 | PIN / klíč | "Nyní máte splněné veškeré předpříjezdové povinnosti a níže naleznete PIN, díky kterému se u nás můžete ubytovat." |
 | Potvrzovací kód | "Dobrý den, obdržel jsem požadavek na přihlášení přes Váš e-mail. Pro bezpečné přihlášení klikněte na tlačítko níže." |
 
+## GitHub
+
+- **Previo repo:** https://github.com/paveltrnka-prog/alfred-emaily
+- **GitHub Pages (živý přehled):** https://paveltrnka-prog.github.io/alfred-emaily/preview/
+- Push: `git push previo main` — vyžaduje PAT účtu `paveltrnka-prog` (generovat na https://github.com/settings/tokens)
+- Osobní záloha: https://github.com/trnkapavel/alfred-e-maily
+
 ## Pravidla výstupu
 - Čisté HTML, **bez PHP proměnných** (placeholdery jako `[HOTEL_NAME]`, `[RESERVATION_ID]` apod.)
 - Inline CSS pro email kompatibilitu — žádné externí stylesheets
