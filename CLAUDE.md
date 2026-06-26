@@ -5,9 +5,8 @@ Redesign všech transakčních e-mailů aplikace Alfred (myalfred.app) pro hotel
 
 ## Zdroje
 - **Screenshoty stávajících emailů:** `resources/screenshots/` — základ pro copy a obsah
-- **Assets:** `assets/` — alfred-avatar.svg, myalfred-logo.png, hotel.jpg, logo-pytloun.png, inspirace.png
+- **Assets:** `assets/` — alfred-avatar.svg, myalfred-logo.png, hotel.jpg, logo-pytloun.png
 - **Excel s přehledem emailů:** `resources/Mail Sending - Alfred mails.xlsx`
-- **Inspirace designu:** `assets/inspirace.png` (čistý flat email styl)
 
 ## Design systém
 | Token | Hodnota |
