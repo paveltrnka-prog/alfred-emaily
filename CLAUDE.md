@@ -125,7 +125,8 @@ Redesign všech transakčních e-mailů aplikace Alfred (myalfred.app) pro hotel
 
 - **Previo repo:** https://github.com/paveltrnka-prog/alfred-emaily
 - **GitHub Pages (živý přehled):** https://paveltrnka-prog.github.io/alfred-emaily/preview/
-- Push: `git push previo main` — vyžaduje PAT účtu `paveltrnka-prog` (generovat na https://github.com/settings/tokens)
+- Push: `git remote set-url previo https://TOKEN@github.com/paveltrnka-prog/alfred-emaily.git && git push previo main && git remote set-url previo https://github.com/paveltrnka-prog/alfred-emaily.git`
+- PAT generovat na https://github.com/settings/tokens jako `paveltrnka-prog`, scope `repo`
 - Osobní záloha: https://github.com/trnkapavel/alfred-e-maily
 
 ## Pravidla výstupu
