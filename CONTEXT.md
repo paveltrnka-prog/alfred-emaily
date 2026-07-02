@@ -7,7 +7,7 @@ Alfred je PWA aplikace od Previo pro hotelové hosty. Umožňuje online check-in
 Backend: PHP / Previo systém (sender třídy ve `share/lib/Previo/library/Previo/Alfred/`)
 
 ## Scope redesignu
-Předělat **32 emailových šablon** z datovaného designu na moderní flat styl.
+Předělat **33 emailových šablon** z datovaného designu na moderní flat styl.
 
 ### Proč redesign
 - Stávající design je zastaralý (fialové plochy, starý font, těžké layouty)
@@ -16,7 +16,7 @@ Předělat **32 emailových šablon** z datovaného designu na moderní flat sty
 
 ## Přehled emailů
 
-### Pro hosta (18)
+### Pro hosta (19)
 | Soubor | Trigger | Klíčový obsah |
 |---|---|---|
 | 01-pre-arrival-7days | 7 dní před příjezdem | Výzva k online check-in, tlačítko CTA, kód rezervace |
@@ -37,6 +37,7 @@ Předělat **32 emailových šablon** z datovaného designu na moderní flat sty
 | 16-service-ordered | Po objednání služby | Detail objednávky |
 | 17-ssbar-online | SSBar online platba | Položky, celková cena |
 | 18-ssbar-terminal | SSBar terminál platba | Položky, celková cena |
+| 19-group-pre-arrival | Pre-arrival — skupinová rezervace (více pokojů) | Detail za každý pokoj (check-in/out, hosté, noci) |
 
 ### Pro hotel (14)
 | Soubor | Klíčový obsah |
