@@ -53,6 +53,7 @@ Redesign všech transakčních e-mailů aplikace Alfred (myalfred.app) pro hotel
     16-service-ordered.html
     17-ssbar-online.html
     18-ssbar-terminal.html
+    19-group-pre-arrival.html
   /hotel
     01-checkin-completed.html
     02-payment-online.html
