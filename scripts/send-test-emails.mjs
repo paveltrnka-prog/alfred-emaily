@@ -7,8 +7,10 @@
  *   export GMAIL_TO=prijemce@email.com       # kam poslat (výchozí = GMAIL_USER)
  *
  * Spuštění:
- *   node scripts/send-test-emails.mjs              # pošle všechny emaily
- *   node scripts/send-test-emails.mjs guest/01     # pošle jen emaily matchující "guest/01"
+ *   node scripts/send-test-emails.mjs guest/01           # pošle jen emaily matchující "guest/01"
+ *   node scripts/send-test-emails.mjs guest/01,guest/19  # více filtrů oddělených čárkou
+ *   node scripts/send-test-emails.mjs --all              # pošle úplně všechny emaily
+ *   node scripts/send-test-emails.mjs --list             # jen vypíše seznam dostupných emailů
  */
 
 import nodemailer from 'nodemailer';
@@ -22,7 +24,7 @@ const ROOT = path.join(__dirname, '..');
 const GMAIL_USER = process.env.GMAIL_USER;
 const GMAIL_PASS = process.env.GMAIL_PASS;
 const GMAIL_TO   = process.env.GMAIL_TO || GMAIL_USER;
-const FILTER     = process.argv[2] || '';
+const ARG        = process.argv[2] || '';
 
 if (!GMAIL_USER || !GMAIL_PASS) {
   console.error('Chybi GMAIL_USER nebo GMAIL_PASS env promenne.');
@@ -49,6 +51,7 @@ const EMAILS = [
   { file: 'guest/16-service-ordered.html',         subject: '[TEST] Guest 16 — Service ordered' },
   { file: 'guest/17-ssbar-online.html',            subject: '[TEST] Guest 17 — SSBar online' },
   { file: 'guest/18-ssbar-terminal.html',          subject: '[TEST] Guest 18 — SSBar terminal' },
+  { file: 'guest/19-group-pre-arrival.html',       subject: '[TEST] Guest 19 — Group pre-arrival' },
   { file: 'hotel/01-checkin-completed.html',       subject: '[TEST] Hotel 01 — Check-in completed' },
   { file: 'hotel/02-payment-online.html',          subject: '[TEST] Hotel 02 — Payment online' },
   { file: 'hotel/03-payment-terminal.html',        subject: '[TEST] Hotel 03 — Payment terminal' },
@@ -65,10 +68,21 @@ const EMAILS = [
   { file: 'hotel/14-expired-preauth.html',         subject: '[TEST] Hotel 14 — Expired preauth' },
 ];
 
-const filtered = FILTER ? EMAILS.filter(e => e.file.includes(FILTER)) : EMAILS;
+if (ARG === '--list' || ARG === '') {
+  console.log('Dostupne emaily:\n');
+  for (const { file } of EMAILS) console.log(`  ${file}`);
+  console.log('\nPouziti:');
+  console.log('  node scripts/send-test-emails.mjs guest/01           # posle jen matchujici "guest/01"');
+  console.log('  node scripts/send-test-emails.mjs guest/01,guest/19  # vice filtru oddelenych carkou');
+  console.log('  node scripts/send-test-emails.mjs --all              # posle uplne vsechny emaily');
+  process.exit(0);
+}
+
+const filters = ARG === '--all' ? null : ARG.split(',').map(f => f.trim()).filter(Boolean);
+const filtered = filters ? EMAILS.filter(e => filters.some(f => e.file.includes(f))) : EMAILS;
 
 if (filtered.length === 0) {
-  console.error(`Zadny email neodpovida filtru: "${FILTER}"`);
+  console.error(`Zadny email neodpovida filtru: "${ARG}"`);
   process.exit(1);
 }
 
