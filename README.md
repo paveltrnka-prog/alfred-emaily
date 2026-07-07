@@ -6,7 +6,7 @@ Redesign transakčních e-mailů aplikace [Alfred](https://myalfred.app) pro hot
 
 Prohlídka všech emailů: **[paveltrnka-prog.github.io/alfred-emaily/preview/](https://paveltrnka-prog.github.io/alfred-emaily/preview/)**
 
-### Hosté (18 emailů)
+### Hosté (19 emailů)
 | # | Název | Stav |
 |---|---|---|
 | 01 | Pre-arrival 7 dní | neutrální |
@@ -27,6 +27,7 @@ Prohlídka všech emailů: **[paveltrnka-prog.github.io/alfred-emaily/preview/](
 | 16 | Služba objednána | zelená |
 | 17 | SSbar online | zelená |
 | 18 | SSbar terminál | zelená |
+| 19 | Group pre-arrival (více pokojů) | fialová |
 
 ### Hotel (14 emailů)
 | # | Název | Stav |
@@ -61,15 +62,20 @@ Prohlídka všech emailů: **[paveltrnka-prog.github.io/alfred-emaily/preview/](
 ```
 /emails
   _base.html              sdílená šablona
-  /guest                  emaily pro hosty (01–18)
+  /guest                  emaily pro hosty (01–19) + 20-mascot-concept.html (koncept)
   /hotel                  emaily pro hotely (01–14)
 /preview
-  index.html              přehled všech emailů
+  index.html              přehled všech emailů + koncepty
 /assets
   alfred-avatar.svg
+  alfred-mascot.png       3D maskot (hero pro koncepty)
   myalfred-logo.png
   hotel.jpg
   logo-pytloun.png
+/scripts
+  send-test-emails.mjs    odeslání testovacích emailů přes Gmail
+  screenshot-test.mjs
+  download-screenshots.mjs
 /resources
   screenshots/            screenshoty stávajících emailů
 ```

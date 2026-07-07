@@ -57,6 +57,11 @@ Předělat **33 emailových šablon** z datovaného designu na moderní flat sty
 | 13-ssbar-terminal | SSBar objednávka (terminál) |
 | 14-expired-preauth | Upozornění na expirující pre-autorizaci |
 
+## Koncepty (rozpracované návrhy, mimo finálních 33)
+| Soubor | Popis |
+|---|---|
+| 20-mascot-concept | Varianta 01-pre-arrival-7days s hero foto pokoje nahrazeným 3D maskotem Alfreda na branded fialovém pozadí (`assets/alfred-mascot.png`) |
+
 ## Existující screenshoty
 Všechny screenshoty stávajících emailů jsou v `resources/screenshots/`.
 Slouží **pouze jako reference pro copy a obsah**, ne pro design.
