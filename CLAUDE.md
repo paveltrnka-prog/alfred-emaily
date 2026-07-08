@@ -21,14 +21,24 @@ Redesign všech transakčních e-mailů aplikace Alfred (myalfred.app) pro hotel
 | Border | `#e0d8e0` |
 | Font | Inter, Arial, sans-serif |
 
-## Stavové barvy (Alfredova bublina)
-| Stav | Bublina bg | Akcentová barva | Použití |
-|---|---|---|---|
-| Neutrální | `#f0e8ef` | `#6F2F6A` | pre-arrival, checkout reminder |
-| Pozitivní | `#dcfce7` | `#16a34a` | platba přijata, check-in, PIN, služby |
-| Čekající | `#dbeafe` | `#1d4ed8` | preautorizace, potvrzovací kód |
-| Změna | `#fef3c7` | `#d97706` | změna termínu, snížení hostů |
-| Problém | `#fde8e8` | `#c0392b` | zrušení, selhání platby, expirace |
+## Stav e-mailu: velký nadpis, ne barevné pozadí
+
+**Od 2026-07-08 (rozhodnutí vedení):** Alfredova bublina má vždy jednotné neutrální pozadí `#f0e8ef`, bez ohledu na stav e-mailu. Barevné podbarvení bubliny podle stavu bylo zrušeno, protože každý hotel si bude moct šablonu obrandovat vlastní barvou — kolize barvy hotelu se stavovou barvou pozadí (např. zelený brand hotelu + zelená "pozitivní" bublina) by dělala obsah nečitelný.
+
+Stav e-mailu místo toho nese **výrazný tučný nadpis** (`font-size:17px; font-weight:700`) hned nad Alfredovou bublinou, barevný podle stavu (barva textu, ne pozadí — text s brandem hotelu nekoliduje):
+
+| Stav | Akcentová barva (text nadpisu) | Použití |
+|---|---|---|
+| Neutrální | `#6F2F6A` | pre-arrival, checkout reminder |
+| Pozitivní | `#16a34a` | platba přijata, check-in, PIN, služby |
+| Čekající | `#1d4ed8` | preautorizace, potvrzovací kód |
+| Změna | `#d97706` | změna termínu, snížení hostů |
+| Problém | `#c0392b` | zrušení, selhání platby, expirace |
+
+Vzor (vzniklo podle `guest/05-reservation-cancel.html`):
+```html
+<p style="margin:0 0 12px; font-size:17px; font-weight:700; color:#c0392b; font-family:Inter,Arial,sans-serif;">Cancelled reservation</p>
+```
 
 ## Struktura projektu
 ```
@@ -130,6 +140,36 @@ Redesign všech transakčních e-mailů aplikace Alfred (myalfred.app) pro hotel
 - PAT generovat na https://github.com/settings/tokens jako `paveltrnka-prog`, scope `repo`
 - Osobní záloha: https://github.com/trnkapavel/alfred-e-maily
 
+## UX principy — srozumitelnost a akce
+
+Každý email musí splňovat tři věci, v tomto pořadí důležitosti:
+
+### 1. Okamžitá jasnost — co se stalo?
+- První věta Alfredovy bubliny = jednoznačné potvrzení situace. Host nesmí číst celý email, aby pochopil o co jde.
+- Vzor: "Potvrzuji přijetí platby [AMOUNT]." / "Vaše rezervace byla zrušena." / "Váš PIN pro vstup je připraven."
+- Nikdy nezačínat obecným pozdravem nebo kontextem — rovnou k věci.
+
+### 2. Jedna hlavní akce — co mají udělat?
+- Každý email má **maximálně jedno CTA tlačítko**. Pokud email jen informuje (platba přijata, zrušení), CTA není potřeba.
+- Text tlačítka = konkrétní akce, ne obecné "Klikněte zde". Příklady: "PROVÉST ONLINE CHECK-IN", "ZOBRAZIT REZERVACI", "ZAPLATIT ONLINE".
+- Tlačítko musí být vizuálně dominantní a tapovatelné na mobilu (min. výška 44px).
+
+### 3. Rychlá informace — klíčová data na první pohled
+- Info tabulka (číslo rezervace, termín, hotel) musí být přítomna u všech rezervačních emailů.
+- Číselné hodnoty (částky, PIN, kódy) vizuálně zvýraznit — větší font nebo bold.
+- Alfred text: max 2–3 věty. Pokud potřebuješ více, je toho příliš.
+
+### Responsivita — funguje na všech zařízeních
+Verify.mjs automaticky kontroluje:
+- Žádný horizontální scroll na 320px, 375px, 700px
+- Žádný element přetékající viewport
+- CTA tlačítko viditelné v mobilním viewportu
+- Obrázky mají alt atributy
+
+Co verify nekontroluje (hlídá autor):
+- Touch target min 44px výška na tlačítkách
+- Kontrast textu na barevném pozadí bubliny
+
 ## Pravidla výstupu
 - Čisté HTML, **bez PHP proměnných** (placeholdery jako `[HOTEL_NAME]`, `[RESERVATION_ID]` apod.)
 - Inline CSS pro email kompatibilitu — žádné externí stylesheets
@@ -142,3 +182,45 @@ Redesign všech transakčních e-mailů aplikace Alfred (myalfred.app) pro hotel
 Pro účely review jsou placeholdery nahrazeny reálnými daty:
 Hotel Pytloun Liberec, rezervace 20241471, host Jan Novák, 15.–18. července 2025.
 Před předáním do PHP backendu je třeba placeholdery obnovit.
+
+## Loop Engineering
+
+### Binární exit condition (pro `--goal` a loop.sh)
+Email PASSES pokud splní **všechny** podmínky z `verify.mjs`:
+- `table width="510"` přítomno
+- Font `Inter` přítomno
+- Stavová barva přítomna (primární `#6F2F6A`, nebo akcentová dle stavu emailu — `#16a34a`, `#1d4ed8`, `#d97706`, `#c0392b`)
+- Footer `Alfred powered by Previo` přítomno
+- Žádné PHP tagy ani `$proměnné`
+- Žádné externí CSS
+- Alfred bublina a avatar přítomny
+- Playwright renderuje stránku bez chyby (obsah > 50 znaků)
+- Žádný horizontální scroll na 320px, 375px ani 700px
+- Žádný element přetékající viewport
+- Obrázky mají alt atributy
+
+### Příkazy
+```bash
+npm run verify                           # zkontroluj všechny emaily
+npm run verify guest/05-reservation-cancel.html  # jeden email
+npm run loop                             # oprav všechny emaily (max 5 kol)
+bash scripts/loop.sh guest/05-reservation-cancel.html  # oprav jeden email
+```
+
+### Claude Code `--goal` (headless)
+```bash
+claude --goal "node scripts/verify.mjs exits with code 0 for all emails" \
+  --dangerously-skip-permissions --max-turns 10
+```
+
+### Verifier jako sub-agent (v Claude Code)
+Po každé změně emailu použij Task tool:
+```
+You are a verifier. You did NOT write this email HTML.
+Run: node scripts/verify.mjs [file]
+Report only PASS or FAIL with specific rule names that failed. Nothing else.
+```
+
+### Loop flow
+Proposer (Claude) → verify.mjs → PASS → git commit
+                               → FAIL → Proposer dostane failure output → opakuj (max 5×)

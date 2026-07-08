@@ -49,13 +49,15 @@ Prohlídka všech emailů: **[paveltrnka-prog.github.io/alfred-emaily/preview/](
 
 ## Stavové barvy
 
-| Stav | Barva | Hex |
+Alfredova bublina má vždy neutrální pozadí `#f0e8ef` (nekoliduje s brandem hotelu). Stav nese tučný nadpis nad bublinou, barevný podle stavu:
+
+| Stav | Barva nadpisu | Hex |
 |---|---|---|
-| Pozitivní | Zelená | `#16a34a` / bg `#dcfce7` |
-| Čekající | Modrá | `#1d4ed8` / bg `#dbeafe` |
-| Změna | Oranžová | `#d97706` / bg `#fef3c7` |
-| Problém | Červená | `#c0392b` / bg `#fde8e8` |
-| Neutrální | Fialová | `#6F2F6A` / bg `#f0e8ef` |
+| Pozitivní | Zelená | `#16a34a` |
+| Čekající | Modrá | `#1d4ed8` |
+| Změna | Oranžová | `#d97706` |
+| Problém | Červená | `#c0392b` |
+| Neutrální | Fialová | `#6F2F6A` |
 
 ## Struktura projektu
 
