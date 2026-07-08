@@ -75,6 +75,8 @@ Alfredova bublina má vždy neutrální pozadí `#f0e8ef` (nekoliduje s brandem 
   hotel.jpg
   logo-pytloun.png
 /scripts
+  verify.mjs              binární kontrola všech emailů proti pravidlům (npm run verify)
+  loop.sh                 automatický proposer/verifier loop nad verify.mjs (npm run loop)
   send-test-emails.mjs    odeslání testovacích emailů přes Gmail
   screenshot-test.mjs
   download-screenshots.mjs
