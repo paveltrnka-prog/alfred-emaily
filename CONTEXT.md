@@ -61,6 +61,7 @@ Předělat **33 emailových šablon** z datovaného designu na moderní flat sty
 | Soubor | Popis |
 |---|---|
 | 20-mascot-concept | Varianta 01-pre-arrival-7days s hero foto pokoje nahrazeným 3D maskotem Alfreda na branded fialovém pozadí (`assets/alfred-mascot.png`) |
+| 21-dark-mode-concept | Varianta 01-pre-arrival-7days inspirovaná booking.com potvrzovacím e-mailem: přidán price breakdown, cancellation policy a platební bezpečnostní upozornění, plus podpora dark mode přes `prefers-color-scheme` (funguje v Apple Mail/iOS Mail/Outlook.com/Thunderbirdu; Gmail si barvy invertuje sám) |
 
 ## Existující screenshoty
 Všechny screenshoty stávajících emailů jsou v `resources/screenshots/`.

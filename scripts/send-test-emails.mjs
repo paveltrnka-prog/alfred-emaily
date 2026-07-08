@@ -52,6 +52,7 @@ const EMAILS = [
   { file: 'guest/17-ssbar-online.html',            subject: '[TEST] Guest 17 — SSBar online' },
   { file: 'guest/18-ssbar-terminal.html',          subject: '[TEST] Guest 18 — SSBar terminal' },
   { file: 'guest/19-group-pre-arrival.html',       subject: '[TEST] Guest 19 — Group pre-arrival' },
+  { file: 'guest/21-dark-mode-concept.html',       subject: '[KONCEPT] Guest 21 — Dark mode + price breakdown' },
   { file: 'hotel/01-checkin-completed.html',       subject: '[TEST] Hotel 01 — Check-in completed' },
   { file: 'hotel/02-payment-online.html',          subject: '[TEST] Hotel 02 — Payment online' },
   { file: 'hotel/03-payment-terminal.html',        subject: '[TEST] Hotel 03 — Payment terminal' },

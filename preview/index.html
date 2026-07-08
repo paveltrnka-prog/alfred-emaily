@@ -15,13 +15,13 @@
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; padding-bottom: 32px; }
     .card { background: #242424; border-radius: 10px; overflow: hidden; text-decoration: none; display: block; transition: transform 0.15s; }
     .card:hover { transform: translateY(-2px); }
-    .card iframe { width: 600px; height: 420px; border: none; transform-origin: top left; pointer-events: none; display: block; }
+    .card iframe { width: 600px; height: 620px; border: none; transform-origin: top left; pointer-events: none; display: block; }
     .card-label { padding: 10px 14px; background: #2e2e2e; }
     .card-label span { font-size: 11px; color: #aaa; display: block; }
     .card-label strong { font-size: 13px; color: #fff; display: block; margin-top: 2px; }
-    .iframe-wrap { overflow: hidden; position: relative; }
+    .iframe-wrap { overflow: hidden; position: relative; width: 100%; }
     .badge-concept-wrap { background: #fff; margin: -10px -14px 8px; padding: 10px 14px 8px; }
-    .badge-concept { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; background: #d97706; color: #fff; padding: 3px 8px; border-radius: 4px; }
+    .badge-concept-wrap .badge-concept { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; background: #d97706; color: #fff; padding: 3px 8px; border-radius: 4px; }
   </style>
 </head>
 <body>
@@ -35,135 +35,135 @@
   <h2>Emaily pro hosty</h2>
   <div class="grid">
     <a class="card" href="../emails/guest/01-pre-arrival-7days.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/01-pre-arrival-7days.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 01</span><strong>Pre-arrival — 7 dní</strong></div>
     </a>
     <a class="card" href="../emails/guest/02-pre-arrival-today.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/02-pre-arrival-today.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 02</span><strong>Pre-arrival — dnes</strong></div>
     </a>
     <a class="card" href="../emails/guest/03-checkin-completed.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/03-checkin-completed.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 03</span><strong>Check-in dokončen</strong></div>
     </a>
     <a class="card" href="../emails/guest/04-checkout-reminder.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/04-checkout-reminder.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 04</span><strong>Připomínka check-out</strong></div>
     </a>
     <a class="card" href="../emails/guest/05-reservation-cancel.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/05-reservation-cancel.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 05</span><strong>Zrušení rezervace</strong></div>
     </a>
     <a class="card" href="../emails/guest/06-reservation-date-change.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/06-reservation-date-change.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 06</span><strong>Změna termínu</strong></div>
     </a>
     <a class="card" href="../emails/guest/07-guest-count-lowered.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/07-guest-count-lowered.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 07</span><strong>Snížení počtu hostů</strong></div>
     </a>
     <a class="card" href="../emails/guest/08-payment-online.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/08-payment-online.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 08</span><strong>Platba online</strong></div>
     </a>
     <a class="card" href="../emails/guest/09-payment-terminal.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/09-payment-terminal.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 09</span><strong>Platba terminál</strong></div>
     </a>
     <a class="card" href="../emails/guest/10-payment-fail.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/10-payment-fail.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 10</span><strong>Selhání platby</strong></div>
     </a>
     <a class="card" href="../emails/guest/11-preauth-terminal.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/11-preauth-terminal.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 11</span><strong>Pre-autorizace terminál</strong></div>
     </a>
     <a class="card" href="../emails/guest/12-preauth-cancel-online.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/12-preauth-cancel-online.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 12</span><strong>Zrušení pre-autorizace</strong></div>
     </a>
     <a class="card" href="../emails/guest/13-alfred-confirmation-code.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/13-alfred-confirmation-code.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 13</span><strong>Přihlašovací odkaz</strong></div>
     </a>
     <a class="card" href="../emails/guest/14-pin-info.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/14-pin-info.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 14</span><strong>PIN kód</strong></div>
     </a>
     <a class="card" href="../emails/guest/15-key-reminder.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/15-key-reminder.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 15</span><strong>Připomínka klíče</strong></div>
     </a>
     <a class="card" href="../emails/guest/16-service-ordered.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/16-service-ordered.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 16</span><strong>Objednaná služba</strong></div>
     </a>
     <a class="card" href="../emails/guest/17-ssbar-online.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/17-ssbar-online.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 17</span><strong>SSBar — online platba</strong></div>
     </a>
     <a class="card" href="../emails/guest/18-ssbar-terminal.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/18-ssbar-terminal.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 18</span><strong>SSBar — terminál</strong></div>
     </a>
     <a class="card" href="../emails/guest/19-group-pre-arrival.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/19-group-pre-arrival.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>guest / 19</span><strong>Pre-arrival — 2 rooms</strong></div>
     </a>
@@ -174,100 +174,100 @@
   <h2>Emaily pro hotely</h2>
   <div class="grid">
     <a class="card" href="../emails/hotel/01-checkin-completed.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/hotel/01-checkin-completed.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>hotel / 01</span><strong>Check-in dokončen</strong></div>
     </a>
     <a class="card" href="../emails/hotel/02-payment-online.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/hotel/02-payment-online.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>hotel / 02</span><strong>Platba online</strong></div>
     </a>
     <a class="card" href="../emails/hotel/03-payment-terminal.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/hotel/03-payment-terminal.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>hotel / 03</span><strong>Platba terminál</strong></div>
     </a>
     <a class="card" href="../emails/hotel/04-payment-fail.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/hotel/04-payment-fail.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>hotel / 04</span><strong>Selhání platby</strong></div>
     </a>
     <a class="card" href="../emails/hotel/05-preauth-terminal.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/hotel/05-preauth-terminal.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>hotel / 05</span><strong>Pre-autorizace terminál</strong></div>
     </a>
     <a class="card" href="../emails/hotel/06-preauth-cancel-online.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/hotel/06-preauth-cancel-online.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>hotel / 06</span><strong>Zrušení pre-autorizace</strong></div>
     </a>
     <a class="card" href="../emails/hotel/07-reservation-cancel.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/hotel/07-reservation-cancel.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>hotel / 07</span><strong>Storno rezervace</strong></div>
     </a>
     <a class="card" href="../emails/hotel/08-reservation-date-change.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/hotel/08-reservation-date-change.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>hotel / 08</span><strong>Změna termínu</strong></div>
     </a>
     <a class="card" href="../emails/hotel/09-minibar.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/hotel/09-minibar.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>hotel / 09</span><strong>Konzumace minibaru</strong></div>
     </a>
     <a class="card" href="../emails/hotel/10-commission-failed.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/hotel/10-commission-failed.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>hotel / 10</span><strong>Selhání komise</strong></div>
     </a>
     <a class="card" href="../emails/hotel/11-service-ordered.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/hotel/11-service-ordered.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>hotel / 11</span><strong>Objednaná služba</strong></div>
     </a>
     <a class="card" href="../emails/hotel/12-ssbar-online.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/hotel/12-ssbar-online.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>hotel / 12</span><strong>SSBar — online platba</strong></div>
     </a>
     <a class="card" href="../emails/hotel/13-ssbar-terminal.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/hotel/13-ssbar-terminal.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>hotel / 13</span><strong>SSBar — terminál</strong></div>
     </a>
     <a class="card" href="../emails/hotel/14-expired-preauth.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/hotel/14-expired-preauth.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label"><span>hotel / 14</span><strong>Expirující pre-autorizace</strong></div>
     </a>
@@ -278,17 +278,38 @@
 <h2>Koncepty</h2>
 <div class="grid">
     <a class="card" href="../emails/guest/20-mascot-concept.html" target="_blank">
-      <div class="iframe-wrap" style="height:210px;">
+      <div class="iframe-wrap">
         <iframe src="../emails/guest/20-mascot-concept.html" scrolling="no"
-                style="transform:scale(0.466); width:600px; height:450px;"></iframe>
+              ></iframe>
       </div>
       <div class="card-label">
         <div class="badge-concept-wrap"><span class="badge-concept">Nový koncept</span></div>
         <span>guest / 20</span><strong>Pre-arrival — maskot Alfred</strong>
       </div>
     </a>
+    <a class="card" href="../emails/guest/21-dark-mode-concept.html" target="_blank">
+      <div class="iframe-wrap">
+        <iframe src="../emails/guest/21-dark-mode-concept.html" scrolling="no"
+              ></iframe>
+      </div>
+      <div class="card-label">
+        <div class="badge-concept-wrap"><span class="badge-concept">Nový koncept</span></div>
+        <span>guest / 21</span><strong>Pre-arrival — dark mode + price breakdown</strong>
+      </div>
+    </a>
 </div>
 </div>
-
+<script>
+  function fitPreviews() {
+    document.querySelectorAll('.iframe-wrap').forEach(function (wrap) {
+      var iframe = wrap.querySelector('iframe');
+      var scale = wrap.clientWidth / 600;
+      iframe.style.transform = 'scale(' + scale + ')';
+      wrap.style.height = Math.round(620 * scale) + 'px';
+    });
+  }
+  window.addEventListener('load', fitPreviews);
+  window.addEventListener('resize', fitPreviews);
+</script>
 </body>
 </html>

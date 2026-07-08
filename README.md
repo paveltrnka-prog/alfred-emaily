@@ -64,7 +64,7 @@ Alfredova bublina má vždy neutrální pozadí `#f0e8ef` (nekoliduje s brandem 
 ```
 /emails
   _base.html              sdílená šablona
-  /guest                  emaily pro hosty (01–19) + 20-mascot-concept.html (koncept)
+  /guest                  emaily pro hosty (01–19) + 20-mascot-concept.html, 21-dark-mode-concept.html (koncepty)
   /hotel                  emaily pro hotely (01–14)
 /preview
   index.html              přehled všech emailů + koncepty
