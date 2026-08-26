@@ -66,8 +66,12 @@ Alfredova bublina má vždy neutrální pozadí `#f0e8ef` (nekoliduje s brandem 
   _base.html              sdílená šablona
   /guest                  emaily pro hosty (01–19) + 20-mascot-concept.html, 21-dark-mode-concept.html (koncepty)
   /hotel                  emaily pro hotely (01–14)
+  → vyplněná testovacími daty (Hotel Pytloun Liberec, rezervace 20241471...), pro vizuální review a GitHub Pages preview
+/emails-dev
+  /guest, /hotel          zrcadlo /emails se stejnými soubory, ale s obnovenými [VARIABLE] placeholdery
+  → k předání programátorům pro napojení na PHP backend; neodkazuje na něj preview ani GitHub Pages
 /preview
-  index.html              přehled všech emailů + koncepty
+  index.html              přehled všech emailů + koncepty (načítá soubory z /emails, ne z /emails-dev)
 /assets
   alfred-avatar.svg
   alfred-mascot.png       3D maskot (hero pro koncepty)
@@ -86,10 +90,11 @@ Alfredova bublina má vždy neutrální pozadí `#f0e8ef` (nekoliduje s brandem 
 
 ## Technické detaily
 
-- Čisté HTML, bez PHP proměnných — dynamické hodnoty jako `[HOTEL_NAME]`, `[RESERVATION_ID]`
+- Čisté HTML, bez PHP proměnných
 - Inline CSS pro kompatibilitu s email klienty
 - Šířka 510px, centrovaný layout
-- Testovací data: Hotel Pytloun Liberec, host Jan Novák
+- `/emails`: testovací data (Hotel Pytloun Liberec, host Jan Novák) — pro vizuální review
+- `/emails-dev`: stejné soubory s dynamickými hodnotami jako `[HOTEL_NAME]`, `[RESERVATION_ID]` — pro předání programátorům
 
 ## GitHub Pages
 
