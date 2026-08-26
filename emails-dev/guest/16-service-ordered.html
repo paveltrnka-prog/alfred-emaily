@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Alfred — Service order confirmation</title>
+  <style>
+    @media only screen and (max-width: 550px) {
+      .email-wrap  { padding: 0 !important; }
+      .email-inner { width: 100% !important; max-width: 100% !important; }
+    }
+  </style>
+</head>
+<body style="margin:0; padding:0; background-color:#F4F6F8; font-family:Inter,Arial,sans-serif; -webkit-font-smoothing:antialiased; -webkit-text-size-adjust:100%; text-size-adjust:100%;">
+<table class="email-wrap" width="100%" cellpadding="0" cellspacing="0" border="0"
+       style="background-color:#F4F6F8; padding:36px 16px;">
+  <tr><td align="center">
+    <table width="510" cellpadding="0" cellspacing="0" border="0" class="email-inner" style="width:510px; max-width:100%;">
+
+      <tr><td style="padding:0 16px 14px;">
+        <img src="https://paveltrnka-prog.github.io/alfred-emaily/assets/logo-pytloun.png" alt="[HOTEL_NAME]" height="34"
+             style="display:block; height:34px; width:auto; max-width:160px;">
+      </td></tr>
+
+      <!-- KARTA 1: Alfred -->
+      <tr><td style="padding-bottom:10px;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+               style="background-color:#ffffff; border-radius:14px; overflow:hidden;">
+          <tr><td style="padding:32px 32px;">
+            <p style="margin:0 0 12px; font-size:17px; font-weight:700; color:#16a34a; font-family:Inter,Arial,sans-serif;">Service confirmed</p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td width="48" valign="top" style="padding-top:4px;">
+                  <img src="https://paveltrnka-prog.github.io/alfred-emaily/assets/alfred-avatar.svg" alt="Alfred" width="48" height="48"
+                       style="display:block; width:48px; height:48px; border-radius:50%;">
+                </td>
+                <td width="10" valign="top" style="padding-top:14px; font-size:0; line-height:0;">
+                  <div style="width:0; height:0; border-top:8px solid transparent;
+                              border-bottom:8px solid transparent; border-right:10px solid #f0e8ef;
+                                    mso-hide:all;"></div>
+                </td>
+                <td valign="top" style="background-color:#f0e8ef; border-radius:0 12px 12px 12px; padding:14px 18px;">
+                  <p style="margin:0; font-size:16px; line-height:1.6; color:#1a1a1a; font-family:Inter,Arial,sans-serif;">
+                    I confirm your order for <strong>Breakfast in bed</strong>.
+                    The hotel has been notified and will take care of everything.
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td></tr>
+        </table>
+      </td></tr>
+
+      <!-- KARTA 2: Detail objednávky -->
+      <tr><td style="padding-bottom:10px;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+               style="background-color:#ffffff; border-radius:14px; overflow:hidden;">
+          <tr><td style="padding:24px 32px 24px;">
+            <p style="margin:0 0 16px; font-size:17px; font-weight:700; color:#1a1a1a; font-family:Inter,Arial,sans-serif;">
+              Order details
+            </p>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="font-size:13px; color:#888888; font-family:Inter,Arial,sans-serif; width:40%;">Service</td>
+                <td style="font-size:14px; color:#1a1a1a; font-weight:600; font-family:Inter,Arial,sans-serif;">Breakfast in bed</td>
+              </tr>
+              <tr>
+                <td style="padding-top:8px; font-size:13px; color:#888888; font-family:Inter,Arial,sans-serif;">Datum</td>
+                <td style="padding-top:8px; font-size:14px; color:#1a1a1a; font-weight:600; font-family:Inter,Arial,sans-serif;">[ORDER_DATE]</td>
+              </tr>
+              <tr>
+                <td style="padding-top:8px; font-size:13px; color:#888888; font-family:Inter,Arial,sans-serif;">Price</td>
+                <td style="padding-top:8px; font-size:14px; color:#1a1a1a; font-weight:600; font-family:Inter,Arial,sans-serif;">[SERVICE_PRICE]</td>
+              </tr>
+              <tr>
+                <td style="padding-top:8px; font-size:13px; color:#888888; font-family:Inter,Arial,sans-serif;">Reservation no.</td>
+                <td style="padding-top:8px; font-size:14px; color:#1a1a1a; font-weight:600; font-family:Inter,Arial,sans-serif;">[RESERVATION_ID]</td>
+              </tr>
+            </table>
+          </td></tr>
+        </table>
+      </td></tr>
+
+      <!-- FOOTER -->
+      <tr><td style="padding-top:4px;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+               style="background-color:#ffffff; border-radius:14px; overflow:hidden;">
+          <tr><td align="center" style="padding:28px 40px 10px;">
+            <img src="https://paveltrnka-prog.github.io/alfred-emaily/assets/myalfred-logo.png" alt="myalfred" height="28"
+                 style="display:block; margin:0 auto; height:28px; width:auto;">
+          </td></tr>
+          <tr><td align="center" style="padding:0 40px 5px;">
+            <p style="margin:0; font-size:13px; font-weight:700; color:#1a1a1a; font-family:Inter,Arial,sans-serif;">[HOTEL_NAME]</p>
+          </td></tr>
+          <tr><td align="center" style="padding:0 40px 6px;">
+            <p style="margin:0; font-size:12px; color:#aaaaaa; font-family:Inter,Arial,sans-serif;">
+              <a href="tel:[HOTEL_PHONE]" style="color:#aaaaaa; text-decoration:none;">[HOTEL_PHONE]</a>
+              &nbsp;&middot;&nbsp;
+              <a href="mailto:[HOTEL_EMAIL]" style="color:#aaaaaa; text-decoration:none;">[HOTEL_EMAIL]</a>
+            </p>
+          </td></tr>
+          <tr><td align="center" style="padding:0 40px 28px;">
+            <p style="margin:0; font-size:11px; color:#cccccc; font-family:Inter,Arial,sans-serif;">Alfred powered by Previo</p>
+          </td></tr>
+        </table>
+      </td></tr>
+
+    </table>
+  </td></tr>
+</table>
+</body>
+</html>
