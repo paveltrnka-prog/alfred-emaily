@@ -64,6 +64,8 @@ Vzor (vzniklo podle `guest/05-reservation-cancel.html`):
     17-ssbar-online.html
     18-ssbar-terminal.html
     19-group-pre-arrival.html
+    23-eci-lco-approved.html  ← ECI/LCO approved · Pay (MVP)
+    24-eci-lco-rejected.html  ← ECI/LCO rejected · info (MVP)
   /hotel
     01-checkin-completed.html
     02-payment-online.html
@@ -79,6 +81,10 @@ Vzor (vzniklo podle `guest/05-reservation-cancel.html`):
     12-ssbar-online.html
     13-ssbar-terminal.html
     14-expired-preauth.html
+    15-eci-lco-request.html   ← ECI/LCO request · Approve/Decline (MVP)
+/pages
+  request-approved.html   ← status po Approve (prohlížeč)
+  request-declined.html   ← status po Decline (prohlížeč)
 /preview
   index.html              ← přehled všech emailů s náhledy
 ```

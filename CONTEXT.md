@@ -16,7 +16,7 @@ Předělat **33 emailových šablon** z datovaného designu na moderní flat sty
 
 ## Přehled emailů
 
-### Pro hosta (19)
+### Pro hosta (21)
 | Soubor | Trigger | Klíčový obsah |
 |---|---|---|
 | 01-pre-arrival-7days | 7 dní před příjezdem | Výzva k online check-in, tlačítko CTA, kód rezervace |
@@ -38,8 +38,10 @@ Předělat **33 emailových šablon** z datovaného designu na moderní flat sty
 | 17-ssbar-online | SSBar online platba | Položky, celková cena |
 | 18-ssbar-terminal | SSBar terminál platba | Položky, celková cena |
 | 19-group-pre-arrival | Pre-arrival — skupinová rezervace (více pokojů) | Detail za každý pokoj (check-in/out, hosté, noci) |
+| 23-eci-lco-approved | Hotel schválil ECI/LCO | Pay CTA · služba vznikla jako unpaid |
+| 24-eci-lco-rejected | Hotel zamítl ECI/LCO | Info · standardní čas · bez CTA |
 
-### Pro hotel (14)
+### Pro hotel (15)
 | Soubor | Klíčový obsah |
 |---|---|
 | 01-checkin-completed | Hosté dokončili check-in, detail (jméno, email, tel) |
@@ -56,6 +58,13 @@ Předělat **33 emailových šablon** z datovaného designu na moderní flat sty
 | 12-ssbar-online | SSBar objednávka (online platba) |
 | 13-ssbar-terminal | SSBar objednávka (terminál) |
 | 14-expired-preauth | Upozornění na expirující pre-autorizaci |
+| 15-eci-lco-request | Žádost ECI/LCO · Approve / Decline + odkaz do planneru (MVP 2026-10) |
+
+### Status pages (prohlížeč po kliku z hotelier mailu — ne email)
+| Soubor | Obsah |
+|---|---|
+| `pages/request-approved.html` | Potvrzení Approve · host dostane pay email |
+| `pages/request-declined.html` | Potvrzení Decline · host drží standard CI/CO |
 
 ## Koncepty (rozpracované návrhy, mimo finálních 33)
 | Soubor | Popis |
