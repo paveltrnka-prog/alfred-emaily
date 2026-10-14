@@ -7,7 +7,8 @@ Alfred je PWA aplikace od Previo pro hotelové hosty. Umožňuje online check-in
 Backend: PHP / Previo systém (sender třídy ve `share/lib/Previo/library/Previo/Alfred/`)
 
 ## Scope redesignu
-Předělat **33 emailových šablon** z datovaného designu na moderní flat styl.
+Předělat transakční e-mailové šablony z datovaného designu na moderní flat styl.  
+Aktuálně: **21 guest + 15 hotel** (+ 2 status pages ECI/LCO, koncepty 20–22).
 
 ### Proč redesign
 - Stávající design je zastaralý (fialové plochy, starý font, těžké layouty)
@@ -66,7 +67,7 @@ Předělat **33 emailových šablon** z datovaného designu na moderní flat sty
 | `pages/request-approved.html` | Potvrzení Approve · host dostane pay email |
 | `pages/request-declined.html` | Potvrzení Decline · host drží standard CI/CO |
 
-## Koncepty (rozpracované návrhy, mimo finálních 33)
+## Koncepty (rozpracované návrhy, mimo produkční sadu)
 | Soubor | Popis |
 |---|---|
 | 20-mascot-concept | Varianta 01-pre-arrival-7days s hero foto pokoje nahrazeným 3D maskotem Alfreda na branded fialovém pozadí (`assets/alfred-mascot.png`) |

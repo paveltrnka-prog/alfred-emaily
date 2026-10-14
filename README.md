@@ -4,9 +4,9 @@ Redesign transakčních e-mailů aplikace [Alfred](https://myalfred.app) pro hot
 
 ## Přehled emailů
 
-Prohlídka všech emailů: **[paveltrnka-prog.github.io/alfred-emaily/preview/](https://paveltrnka-prog.github.io/alfred-emaily/preview/)**
+Živá prohlídka (firemní GitHub Pages): **[paveltrnka-prog.github.io/alfred-emaily/preview/](https://paveltrnka-prog.github.io/alfred-emaily/preview/)**
 
-### Hosté (19 emailů)
+### Hosté (21 emailů)
 | # | Název | Stav |
 |---|---|---|
 | 01 | Pre-arrival 7 dní | neutrální |
@@ -28,8 +28,10 @@ Prohlídka všech emailů: **[paveltrnka-prog.github.io/alfred-emaily/preview/](
 | 17 | SSbar online | zelená |
 | 18 | SSbar terminál | zelená |
 | 19 | Group pre-arrival (více pokojů) | fialová |
+| **23** | **ECI/LCO approved · Pay** | zelená |
+| **24** | **ECI/LCO rejected · info** | červená |
 
-### Hotel (14 emailů)
+### Hotel (15 emailů)
 | # | Název | Stav |
 |---|---|---|
 | 01 | Check-in dokončen | zelená |
@@ -46,6 +48,23 @@ Prohlídka všech emailů: **[paveltrnka-prog.github.io/alfred-emaily/preview/](
 | 12 | SSbar online | zelená |
 | 13 | SSbar terminál | zelená |
 | 14 | Expirovaná preautorizace | červená |
+| **15** | **ECI/LCO request · Approve/Decline** | modrá |
+
+### Status pages (prohlížeč — ne email)
+Po kliku Approve / Decline v hotelier mailu:
+
+| Soubor | Obsah |
+|---|---|
+| `pages/request-approved.html` | Request approved · host dostane pay email |
+| `pages/request-declined.html` | Request declined · standardní CI/CO |
+
+### ECI/LCO MVP flow (říjen 2026)
+1. Host žádá early check-in / late check-out v Alfredu  
+2. **hotel/15** → hoteliér Approve / Decline (+ odkaz do planneru)  
+3. **pages/** → status potvrzení v prohlížeči  
+4. **guest/23** → schváleno · **Pay** · **guest/24** → zamítnuto · info  
+
+LCO = stejné šablony, jen copy (arrival ↔ departure).
 
 ## Stavové barvy
 
@@ -64,14 +83,17 @@ Alfredova bublina má vždy neutrální pozadí `#f0e8ef` (nekoliduje s brandem 
 ```
 /emails
   _base.html              sdílená šablona
-  /guest                  emaily pro hosty (01–19) + 20-mascot-concept.html, 21-dark-mode-concept.html (koncepty)
-  /hotel                  emaily pro hotely (01–14)
+  /guest                  emaily pro hosty (01–19, 23–24) + koncepty 20–22
+  /hotel                  emaily pro hotely (01–15)
   → vyplněná testovacími daty (Hotel Pytloun Liberec, rezervace 20241471...), pro vizuální review a GitHub Pages preview
 /emails-dev
   /guest, /hotel          zrcadlo /emails se stejnými soubory, ale s obnovenými [VARIABLE] placeholdery
   → k předání programátorům pro napojení na PHP backend; neodkazuje na něj preview ani GitHub Pages
+/pages
+  request-approved.html   status po Approve (prohlížeč)
+  request-declined.html   status po Decline (prohlížeč)
 /preview
-  index.html              přehled všech emailů + koncepty (načítá soubory z /emails, ne z /emails-dev)
+  index.html              přehled všech emailů + status pages + koncepty (načítá /emails)
 /assets
   alfred-avatar.svg
   alfred-mascot.png       3D maskot (hero pro koncepty)
@@ -96,7 +118,18 @@ Alfredova bublina má vždy neutrální pozadí `#f0e8ef` (nekoliduje s brandem 
 - `/emails`: testovací data (Hotel Pytloun Liberec, host Jan Novák) — pro vizuální review
 - `/emails-dev`: stejné soubory s dynamickými hodnotami jako `[HOTEL_NAME]`, `[RESERVATION_ID]` — pro předání programátorům
 
-## GitHub Pages
+## GitHub
 
-1. Settings → Pages → Source: main branch, root `/`
-2. Přehled dostupný na: `https://trnkapavel.github.io/alfred-e-maily/preview/`
+| | |
+|--|--|
+| **Firemní (Previo)** | https://github.com/paveltrnka-prog/alfred-emaily |
+| **Živý preview** | https://paveltrnka-prog.github.io/alfred-emaily/preview/ |
+| **Osobní záloha** | https://github.com/trnkapavel/alfred-e-maily |
+
+```bash
+# osobní
+git push origin main
+
+# firemní (Pages)
+git push previo main
+```
